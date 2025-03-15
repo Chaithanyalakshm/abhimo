@@ -1,111 +1,103 @@
-/* ========== VARIABLES ========== */
-:root {
-    --primary-color: #2563eb;
-    --secondary-color: #4b5563;
-    --accent-color: #3b82f6;
-    --text-color: #333;
-    --light-bg: #f3f4f6;
-    --dark-bg: #1f2937;
-    --white: #ffffff;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --transition: all 0.3s ease;
-}
+/* ========== CAREERS PAGE SPECIFIC STYLES ========== */
 
-/* ========== RESET & BASE STYLES ========== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
+/* Reset & Base Styles */
 body {
-    color: var(--text-color);
-    line-height: 1.8;
-    font-size: 16px;
+    background-color: #f9f9f9;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Page Header */
+#page-header {
     position: relative;
-    overflow-x: hidden;
+    text-align: center;
+    color: #333;
+    padding: 80px 20px;
+    margin-top: 70px; /* Reduced from 140px which was excessive */
+    background-color: #f9f9f9;
+    overflow: hidden; /* Prevents background image overflow */
+}
+
+#page-header .bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+#page-header .content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Careers Intro Section */
+#careers-intro {
+    padding: 4rem 0;
+    background-color: #ffffff;
 }
 
 .container {
-    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 0;
+    padding: 0 20px;
 }
 
-/* ========== TYPOGRAPHY ========== */
-h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 700;
-    margin-bottom: 1rem;
+.careers-intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
 }
 
-h2 {
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
-    font-weight: 700;
-    margin-bottom: 1rem;
+.careers-intro-text h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+    font-size: 2rem;
 }
 
-h3 {
-    font-size: clamp(1.2rem, 3vw, 1.8rem);
-    font-weight: 600;
-    margin-bottom: 0.8rem;
+.careers-intro-text p {
+    margin-bottom: 1.2rem;
+    color: #666;
+    line-height: 1.6;
 }
 
-p {
-    font-size: clamp(1rem, 2vw, 1.4rem);
-    margin-bottom: 1rem;
+.careers-intro-text .btn {
+    margin-top: 1rem;
 }
 
-a {
-    text-decoration: none;
-    color: var(--primary-color);
-    transition: var(--transition);
-}
-
-a:hover {
-    color: var(--accent-color);
-}
-
-ul {
-    list-style: none;
-}
-
-/* ========== UTILITIES ========== */
-/* Background Images */
-/* Change this in the utilities section */
-.bg-img {
-    position: fixed;
-    top: 0;
-    left: 0;
+.careers-intro-image {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    opacity: 0.2;
+    display: flex;
+    justify-content: center;
 }
 
-/* Add this new class for hero-specific background images */
-.hero-bg-img {
-    position: absolute; /* Not fixed */
-    top: 0;
-    left: 0;
+.careers-intro-image img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
-    z-index: 0; /* Above the bg-shape but below content */
-    opacity: 1; /* Full opacity or adjust as needed */
-}
-/* Alternate Background */
-.alternate-bg {
-    background-color: var(--light-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Section Title */
+/* Internships Section */
+#internships {
+    padding: 4rem 0;
+    background-color: #f9f9f9;
+}
+
 .section-title {
+    font-size: 2.5rem;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 20px;
+    color: #333;
     position: relative;
     padding-bottom: 1rem;
 }
@@ -118,209 +110,14 @@ ul {
     transform: translateX(-50%);
     width: 80px;
     height: 3px;
-    background-color: var(--primary-color);
+    background-color: #2563eb;
 }
 
 .section-description {
     text-align: center;
     max-width: 800px;
     margin: 0 auto 3rem;
-}
-
-/* ========== BUTTONS ========== */
-.btn {
-    display: inline-block;
-    padding: 0.8rem 2rem;
-    border-radius: 4px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
-    text-align: center;
-    font-size: clamp(0.9rem, 1.5vw, 1.2rem);
-}
-
-.btn-primary {
-    background-color: var(--primary-color);
-    color: var(--white);
-    
-}
-
-.btn-primary:hover {
-    background-color: var(--accent-color);
-    color: var(--white);
-}
-
-.btn-secondary {
-    background-color: var(--secondary-color);
-    color: var(--white);
-}
-
-.btn-secondary:hover {
-    background-color: #64748b;
-    color: var(--white);
-}
-
-/* ========== HEADER & NAVIGATION ========== */
-header {
-    background-color: var(--white);
-    box-shadow: var(--shadow);
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-    height: 140px;
-    transition: height 0.3s ease;
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
-}
-
-.logo-img {
-    height: 120px;
-    width: auto;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-}
-
-.nav-links li a {
-    color: var(--text-color);
-    font-weight: 600;
-    padding: 0.1rem 0;
-    position: relative;
-    font-size: 1.3rem;
-}
-
-.nav-links li a:hover {
-    color: var(--primary-color);
-}
-
-.nav-links li a.active {
-    color: var(--primary-color);
-}
-
-.nav-links li a.active:after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: var(--primary-color);
-}
-
-/* Hamburger Menu */
-.hamburger-menu {
-    display: none;
-    cursor: pointer;
-}
-
-.hamburger-menu .bar1,
-.hamburger-menu .bar2,
-.hamburger-menu .bar3 {
-    width: 30px;
-    height: 3px;
-    background-color: var(--text-color);
-    margin: 6px 0;
-    transition: 0.4s;
-}
-
-.hamburger-menu.change .bar1 {
-    transform: rotate(-45deg) translate(-7px, 6px);
-}
-
-.hamburger-menu.change .bar2 {
-    opacity: 0;
-}
-
-.hamburger-menu.change .bar3 {
-    transform: rotate(45deg) translate(-6px, -6px);
-}
-
-/* ========== PAGE HEADER ========== */
-#page-header {
-    background: linear-gradient(rgba(37, 40, 49, 0.7), rgba(56, 51, 51, 0.7)), url('images/careerfinal.png.png') center/cover no-repeat;
-    min-height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--white);
-    padding: 180px 20px 60px;
-    position: relative;
-}
-
-#page-header .content {
-    position: relative;
-    z-index: 1;
-}
-
-#page-header h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-}
-
-#page-header p {
-    font-size: 1.5rem;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* ========== CAREERS INTRO SECTION ========== */
-#careers-intro {
-    padding: 4rem 0;
-}
-
-.careers-intro-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-}
-
-.careers-intro-text h2 {
-    margin-bottom: 1.5rem;
-}
-
-.careers-intro-text p {
-    margin-bottom: 1.2rem;
-}
-
-.careers-intro-text .btn {
-    margin-top: 1rem;
-}
-
-.careers-intro-image {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-.careers-intro-image img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: var(--shadow);
-}
-
-/* ========== INTERNSHIPS SECTION ========== */
-#internships {
-    padding: 4rem 0;
+    color: #666;
 }
 
 .internship-categories {
@@ -331,23 +128,37 @@ nav {
 }
 
 .internship-category {
-    background-color: var(--white);
+    background-color: #ffffff;
     padding: 1.5rem;
     border-radius: 8px;
-    box-shadow: var(--shadow);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.internship-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .internship-category h3 {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: var(--primary-color);
+    color: #2563eb;
     font-size: 1.5rem;
+    margin-bottom: 0.8rem;
 }
 
 .internship-category p {
     font-weight: 600;
     margin-bottom: 1.2rem;
+    color: #555;
+}
+
+.internship-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
 }
 
 .internship-list li {
@@ -355,15 +166,16 @@ nav {
     position: relative;
     padding-left: 1.5rem;
     font-size: 1.1rem;
+    color: #666;
 }
 
 .internship-list li:before {
     content: '\f101';
-    font-family: 'Font Awesome 5 Free';
+    font-family: 'Font Awesome 5 Free', sans-serif;
     font-weight: 900;
     position: absolute;
     left: 0;
-    color: var(--primary-color);
+    color: #2563eb;
 }
 
 /* Internship Benefits */
@@ -385,6 +197,9 @@ nav {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
 }
 
 .internship-benefits li {
@@ -407,133 +222,109 @@ nav {
 }
 
 .apply-now h3 {
-    color: var(--primary-color);
+    color: #2563eb;
     margin-bottom: 1rem;
 }
 
 .apply-now p {
     margin-bottom: 1.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* ========== WHY JOIN SECTION ========== */
+/* Why Join Section */
 #why-join {
     padding: 4rem 0;
+    background-color: #ffffff;
 }
 
 .why-join-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
+    margin-top: 40px;
 }
 
 .why-join-card {
-    background-color: #e3e6ed;
+    background-color: #e4e8ec; /* Changed to red as requested */
     padding: 1.5rem;
     border-radius: 8px;
-    box-shadow: var(--shadow);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: var(--transition);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .why-join-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .why-join-icon {
     font-size: 2rem;
-    color: var(--primary-color);
+    color: #ffffff; /* Changed to white for better contrast on red background */
     margin-bottom: 1rem;
 }
 
 .why-join-card h3 {
     font-size: 1.3rem;
     margin-bottom: 0.8rem;
+    color: #ffffff; /* Changed to white for better contrast on red background */
 }
 
-/* ========== FOOTER ========== */
-footer {
-    background-color: var(--dark-bg);
-    color: var(--white);
-    padding: 3rem 0 0;
+.why-join-card p {
+    color: #ffffff; /* Changed to white for better contrast on red background */
+    line-height: 1.6;
 }
 
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-
-.footer-section h3 {
-    font-size: 1.3rem;
-    margin-bottom: 1.2rem;
-    position: relative;
-    padding-bottom: 0.5rem;
-}
-
-.footer-section h3:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50px;
-    height: 3px;
-    background-color: var(--primary-color);
-}
-
-.footer-section ul li {
-    margin-bottom: 0.8rem;
-}
-
-.footer-section ul li a {
-    color: #d1d5db;
-    transition: var(--transition);
-}
-
-.footer-section ul li a:hover {
-    color: var(--primary-color);
-    padding-left: 5px;
-}
-
-.footer-section p {
-    margin-bottom: 1rem;
-    color: #d1d5db;
-}
-
-.footer-section p i {
-    margin-right: 10px;
-    color: var(--primary-color);
-}
-
-.footer {
+/* Call to Action Section */
+#cta {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: #ffffff;
     text-align: center;
-    padding: 1.5rem 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* ========== MEDIA QUERIES / RESPONSIVE ========== */
+#cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#cta p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    font-size: 1.1rem;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #0d3792;
+    color: #ffffff;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #1653d7;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
 @media (max-width: 992px) {
-    h1 {
-        font-size: 2.8rem;
-    }
-    
-    h2 {
-        font-size: 2.2rem;
-    }
-    
-    h3 {
-        font-size: 1.5rem;
-    }
-    
     .careers-intro-grid {
         grid-template-columns: 1fr;
     }
     
     .careers-intro-image {
         margin: 0 auto;
-        max-width: 600px; /* Adjust as needed */
+        max-width: 600px;
     }
-
     
     .internship-benefits ul {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -541,36 +332,8 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .hamburger-menu {
-        display: block;
-    }
-    
-    nav {
-        position: relative;
-    }
-    
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 70%;
-        height: 100vh;
-        background-color: var(--white);
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        transition: 0.5s;
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-        padding: 2rem 0;
-        z-index: 1000;
-    }
-    
-    .nav-links.show {
-        right: 0;
-    }
-    
-    .nav-links li {
-        margin: 1.5rem 0;
+    #page-header {
+        margin-top: 50px;
     }
     
     #page-header h1 {
@@ -588,18 +351,16 @@ footer {
     .internship-categories {
         grid-template-columns: 1fr;
     }
+    
+    .why-join-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
 }
 
 @media (max-width: 576px) {
-    .logo-img {
-        height: 60px;
-    }
-    
     #page-header {
-        padding: 120px 20px 60px;
+        padding: 60px 20px;
     }
-    
-    
     
     #page-header h1 {
         font-size: 2rem;
@@ -616,77 +377,4 @@ footer {
     .internship-benefits ul {
         grid-template-columns: 1fr;
     }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-    }
 }
-#hero {
-    position: relative;
-    min-height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: #f3f4f6; /* Light base background color */
-    overflow: hidden;
-    padding: 3rem 1rem;
-}
-
-.bg-shape {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000"><path d="M0,500 C200,700 400,900 600,700 S900,500 1000,600 L1000,0 L0,0 Z" fill="rgba(37, 99, 235, 0.1)"/></svg>');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.5;
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.hero-content h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: #1f2937; /* Dark text color */
-}
-
-.hero-content p {
-    font-size: clamp(1.2rem, 2vw, 1.8rem);
-    color: #4b5563; /* Secondary text color */
-}
-
-/* Page Header */
-#page-header {
-    position: relative;
-    text-align: center;
-    color: rgb(6, 3, 31);
-    padding: 80px 20px;
-    margin-top: 140px;
-}
-
-.bg-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.5;
-    z-index: 1;
-}
-
-.content {
-    position: relative;
-    z-index: 2;
-}
-

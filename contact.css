@@ -1,71 +1,185 @@
-
-/* Map Section */
-#map {
+/* Contact Section */
+#contact {
     padding: 60px 0;
+    background-color: #ffffff; /* White background matching about.css */
+    background-image: none; /* Explicitly remove any background image */
+}
+
+.contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.contact-info-card {
+    flex: 1;
+    min-width: 300px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.contact-info-item:last-child {
+    margin-bottom: 0;
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+    color: #4e54c8;
+    margin-right: 15px;
+    min-width: 25px;
+    text-align: center;
+}
+
+.contact-details h3 {
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.contact-details p {
+    margin-bottom: 5px;
+    line-height: 1.6;
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f0f2f5;
+    color: #4e54c8;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: #4e54c8;
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+/* Map Section - Keep as is */
+#map {
+    padding: 80px 0;
     background-color: #f5f7fa;
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
 }
 
 .map-container {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    position: relative;
 }
 
 .map-container h2 {
     font-family: var(--font-primary);
-    font-size: 1.8rem;
-    margin-bottom: 15px;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
     color: var(--dark-color);
+    position: relative;
+    display: inline-block;
+}
+
+.map-container h2:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+.map-container p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    color: #555;
+    line-height: 1.6;
 }
 
 .directions-link {
     display: inline-flex;
     align-items: center;
-    padding: 10px 20px;
+    padding: 12px 25px;
     background-color: var(--primary-color);
     color: white;
     text-decoration: none;
     border-radius: 30px;
-    transition: var(--transition);
+    transition: all 0.3s ease;
     font-weight: 600;
+    margin-bottom: 40px;
 }
 
 .directions-link i {
-    margin-right: 8px;
+    margin-right: 10px;
+    font-size: 1.1rem;
 }
 
 .directions-link:hover {
     background-color: var(--secondary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 82, 204, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 82, 204, 0.25);
+}
+
+.map-wrapper {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
 
 .map-frame {
     width: 100%;
-    height: 450px;
+    height: 500px;
     border: none;
-    border-radius: 10px;
-    box-shadow: var(--box-shadow);
-}
-/* Change this in the utilities section */
-.bg-img {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    opacity: 0.2;
+    border-radius: 12px;
+    display: block;
 }
 
-/* Add this new class for hero-specific background images */
-.hero-bg-img {
-    position: absolute; /* Not fixed */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0; /* Above the bg-shape but below content */
-    opacity: 1; /* Full opacity or adjust as needed */
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .map-container h2 {
+        font-size: 1.8rem;
+    }
+    
+    .map-frame {
+        height: 350px;
+    }
+}
+
+@media (max-width: 576px) {
+    #map {
+        padding: 60px 0;
+    }
+    
+    .map-frame {
+        height: 300px;
+    }
 }
